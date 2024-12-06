@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #editform{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Place</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table><br><br>
+    <form id="addform">
+        <input type="number" name="" id="no" placeholder="ID">
+        <input type="text" name="" id="name" placeholder="NAME">
+        <input type="number" name="" id="age" placeholder="AGE">
+        <input type="text" name="" id="place" placeholder="PLACE">
+        <button type="submit" id="submitbtn">Add</button>
+
+    </form>
+
+    <form id="editform">
+        <input type="number" name="" id="eno" placeholder="ID">
+        <input type="text" name="" id="ename" placeholder="NAME">
+        <input type="number" name="" id="eage" placeholder="AGE">
+        <input type="text" name="" id="eplace" placeholder="PLACE">
+        <button type="submit" id="submitbtn">Update</button>
+
+    </form>
+
+    <script src="js/details.js"></script>
+</body>
+</html>
