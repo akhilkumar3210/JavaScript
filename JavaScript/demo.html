@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+             color: red;     
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    {/* <form id="form">
+        <input type="tel" id="a1">
+        <h6 id="demo"></h6>
+        <input type="submit" value="Add">
+    </form> */} -->
+
+
+
+    <!-- {/* <script>
+        document.getElementById("form").addEventListener('submit',function(event){
+                event.preventDefault()
+                let phno= document.getElementById("a1").value
+                let h1= document.getElementById("demo")
+                if(/^[6-9]\d{9}$/.test(phno)){
+                    h1.innerHTML= '*Valid'
+                    h1.style.color='green'
+
+                }
+                else{
+                    h1.innerHTML= '*Invaild'
+                    h1.style.color='red'
+                }
+                document.getElementById("a1").value=''
+        })
+    </script> */} -->
+
+    <!-- <h3 id="demo"></h3>
+    <form id="form">
+        <input type="password"  id="a1" >
+        <input type="submit" value="Check">
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit',function(event){
+                event.preventDefault()
+                let pass = document.getElementById("a1").value 
+                let h1 = document.getElementById("demo")
+                if(/^[A-Z a-z]+[@]+[0-9]/.test(pass)){
+                    h1.innerHTML= '*Valid'
+                    h1.style.color='green'
+
+                }
+                else{
+                    h1.innerHTML= '*Invaild'
+                    h1.style.color='red'
+                }
+                document.getElementById("a1").value=''
+                
+
+        })
+    </script> -->
+
+    <form id="form">
+        <input type="password"  id="a1" >
+        <ul>
+            <li id="len"> Min Letter 8</li>
+            <li id="cap"> One Capital Letter</li>
+            <li id="sml"> Must Contain Small Letter</li>
+            <li id="no">Must Contain Digits</li>
+            <li id="spl_chr">Must Contain One Specail Character</li>
+        </ul>
+        <h2 id="demo"></h2>
+        <input type="submit" value="Check">
+    </form>
+
+    <script>
+        let pswd= document.getElementById("a1")
+        let len= document.getElementById("length") 
+        let cap= document.getElementById("cap") 
+        let sml= document.getElementById("sml") 
+        let no= document.getElementById("no")
+        let spl_chr= document.getElementById("spl_chr")
+
+        pswd.addEventListener('input',function(){
+            const password= pswd.value
+            len.style.color= password.length>8 ? 'green':'red'
+            cap.style.color= /[A-Z]/.test(password) ? 'green' : 'red'
+            sml.style.color= /[a-z]/.test(password) ? 'green' : 'red'
+            no.style.color= /\d/.test(password) ? 'green' : 'red'
+            spl_chr.style.color= /[!@#$%&*]/.test(password) ? 'green' : 'red'
+           
+        })
+        document.getElementById("form").addEventListener('submit',function(event){
+                event.preventDefault()
+                let password = document.getElementById('a1').value 
+                let h1= document.getElementById("demo")       
+                if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)){
+                    h1.innerHTML= '*Valid'
+                    h1.style.color='green'
+                }
+                else{
+                    h1.innerHTML= '*Invaild'
+                    h1.style.color='red'
+                }
+                document.getElementById("a1").value=''
+
+            })
+
+    </script>
+
+</body>
+</html>
