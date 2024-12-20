@@ -1,10 +1,17 @@
 let data=[{id:10,name:'sanju',age:'17',place:'ekm',department:'bcom'},{id:9,name:'Neeraj',age:'18',place:'tsr',department:'bca'},{id:8,name:'Sonu',age:'19',place:'pkd',department:'bba'},]
 
-function sms(){
+document.getElementById('search').addEventListener("input",function(){
+
+    const qry = this.value.toLowerCase()
+    const res = data.filter((student)=>student.name.toLowerCase().includes(qry) || student.place.toLowerCase().includes(qry))
+    sms(res)
+})
+
+function sms(d=data){
 
     let table=document.querySelector("tbody")
     table.innerHTML=''
-    data.forEach((i)=>{
+    d.forEach((i)=>{
         let tr=document.createElement("tr")
         let id_td=document.createElement("td")
         id_td.innerHTML=i.id
